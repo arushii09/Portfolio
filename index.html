@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arushi | Software Developer & Designer</title>
+    <meta name="description" content="Portfolio of Arushi - Softaware developer & designer creating playful, accessible websites with pastel palettes and clean code.">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Arushi | Software Developer & Designer">
+    <meta property="og:description" content="Portfolio of Arushi - Software Developer & designer creating playful, accessible websites.">
+    <meta property="og:type" content="website">
+    <!-- Replace with your actual domain when hosting -->
+    <meta property="og:url" content="https://arushii09.github.io">
+    <!-- Replace with your actual image when hosting 
+    <meta property="og:image" content="https://yourusername.github.io/assets/profile.jpg">-->
+    
+    <!-- Favicon placeholder - replace with your own favicon.ico -->
+    <link rel="icon" href="arushi-portfolio.jpg" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#" class="logo">
+                    <span class="logo-icon">🌸</span>
+                    <span class="logo-text">Arushi</span>
+                </a>
+                
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="assets/Arushi_Resume.pdf" class="nav-link resume-link" download>Resume</a></li>
+                </ul>
+                
+                <div class="theme-toggle">
+                    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </div>
+                
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="floating-blob blob-1"></div>
+            <div class="floating-blob blob-2"></div>
+            <div class="floating-blob blob-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Designing warm, whimsical web experiences <span class="highlight">✨</span></h1>
+                    <p class="hero-subtitle">Hi, I'm Arushi — a software developer & designer who builds playful, accessible websites.</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="Arushi_Resume.pdf" class="btn btn-secondary" download>Download Resume</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-frame">
+                        <!-- Replace assets/profile.jpg with your actual profile image -->
+                        <img src="arushi-portfolio.jpg" alt="Arushi" width="300" height="300" class="profile-img">
+                        <div class="floating-heart">💖</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hi — I'm Arushi, a software developer & designer who builds playful, accessible websites. I love pastel palettes, tiny interactions, and clean code.</p>
+                    
+                    <h3>Skills</h3>
+                    <ul class="skills-list">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>C</li>
+                        <li>CPP</li>
+                        <li>Python</li>
+                        <li>React</li>
+                        <li>Firebase</li>
+                        <li>Github</li>
+                        <li>MySQL</li>
+                        <li>Figma</li>
+                        <li>Vercel</li>
+                    </ul>
+                </div>
+                
+                <div class="fun-facts">
+                    <h3>Fun Facts</h3>
+                    <div class="chips">
+                        <span class="chip">M</span>
+                        <span class="chip">P</span>
+                        <span class="chip">n</span>
+                        <span class="chip">F</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="ui">UI</button>
+                <button class="filter-btn" data-filter="experimental">Experimental</button>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="experimental">
+                    <div class="project-image">
+                        <!-- Replace assets/project1.jpg with your actual project image -->
+                        <img src="unravel-web.png" alt="Unravel Project" width="400" height="250">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Unravel</h3>
+                        <p class="project-description">Simplify complex texts and explanations with our AI-powered tool. Make difficult concepts easy to understand in seconds.</p>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">React</span>
+                            <span class="tag">Firebase</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://unravel-mu.vercel.app/" class="https://unravel-mu.vercel.app/" aria-label="View Unravel demo">
+                                <span>Demo</span>
+                            </a>
+                            <a href="https://github.com/arushii09/Unravel.git" class="https://github.com/arushii09/Unravel.gi" aria-label="View Unravel repository">
+                                <span>Repo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <!-- Replace assets/project2.jpg with your actual project image -->
+                        <img src="smartdiet.png" alt="smart diet Project" width="400" height="250">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Smart Diet</h3>
+                        <p class="project-description">Smart Diet is an AI-powered platform offering personalized diet plans, progress tracking, and a community space for nutrition, wellness, and healthy lifestyle support.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://smart-diet-tnhp.onrender.com/" class="https://smart-diet-tnhp.onrender.com/" aria-label="View Smart Diet demo">
+                                <span>Demo</span>
+                            </a>
+                            <a href="https://github.com/arushii09/Smart-Diet.git" class="https://github.com/arushii09/Smart-Diet.git" aria-label="View Smart Diet repository">
+                                <span>Repo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 
+                <div class="project-card" data-category="experimental">
+                    <div class="project-image">
+                       
+                        <img src="assets/project3.jpg" alt="PalettePicker Project" width="400" height="250">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">PalettePicker</h3>
+                        <p class="project-description">A small color tool & gradient generator for designers and developers.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link" aria-label="View PalettePicker demo">
+                                <span>Demo</span>
+                            </a>
+                            <a href="#" class="project-link" aria-label="View PalettePicker repository">
+                                <span>Repo</span>
+                            </a>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">My Little Philosophy</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial active">
+                    <p class="testimonial-text">"Technology feels best when it’s built for people."</p>
+                    <!--<p class="testimonial-author">— Jamie, Product Manager</p>-->
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"The best projects start as little curiosities."</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"May your code run smoothly and your coffee stay warm ☕💻."</p>
+                </div>
+            </div>
+            <div class="testimonial-dots">
+                <button class="dot active" aria-label="View testimonial 1"></button>
+                <button class="dot" aria-label="View testimonial 2"></button>
+                <button class="dot" aria-label="View testimonial 3"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>I'm always excited to hear about new projects and opportunities. Let's create something beautiful together!</p>
+                    <div class="contact-email">
+                        <strong>Email:</strong> arushiii323@gmail.com
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/arushii09" aria-label="GitHub" class="social-link">
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/arushikumari092" aria-label="LinkedIn" class="social-link">
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message" id="name-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <span class="error-message" id="message-error"></span>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-copyright">
+                    <p>&copy; <span id="current-year"></span> Arushi. All rights reserved.</p>
+                </div>
+                
+                <!--<div class="footer-nav">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>-->
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="modal" id="project-modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-body">
+                <!-- Modal content will be injected by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Toast -->
+    <div class="toast" id="success-toast">
+        <div class="toast-content">
+            <span class="toast-message">Message sent successfully!</span>
+            <button class="toast-close" aria-label="Close toast">&times;</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

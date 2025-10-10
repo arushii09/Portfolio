@@ -1,19 +1,21 @@
- const firebaseConfig = {
-    apiKey: "AIzaSyCR58PBXIlBPGRg1sFbDZSbUU2syIJCxBQ",
-    authDomain: "portfolio-contact-b303b.firebaseapp.com",
-    databaseURL: "https://portfolio-contact-b303b-default-rtdb.firebaseio.com",
-    projectId: "portfolio-contact-b303b",
+ // Firebase config
+const firebaseConfig = {
+    apiKey: "AIzaSyCR58PBXIlBPGRg1sFbDZSbUU2syIJCxBQ", 
+    authDomain: "portfolio-contact-b303b.firebaseapp.com", 
+    databaseURL: "https://portfolio-contact-b303b-default-rtdb.firebaseio.com", 
+    projectId: "portfolio-contact-b303b", 
     storageBucket: "portfolio-contact-b303b.firebasestorage.app",
-    messagingSenderId: "941186950399",
-    appId: "1:941186950399:web:ff34849fa77c2af97c98ca",
-    measurementId: "G-0C9GRLXJSR"
-  };
+    messagingSenderId: "941186950399", 
+    appId: "1:941186950399:web:ff34849fa77c2af97c98ca", 
+    measurementId: "G-0C9GRLXJSR" 
+};
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+// Initialize Firebase
+const app = firebase.initializeApp(firebaseConfig);
+const database = firebase.database(); // <- use compat syntax
+const analytics = firebase.analytics(); // optional
 
-/*
+
 // Initialize contact form with validation
 function initializeContactForm() {
     const contactForm = document.getElementById('contact-form');
@@ -38,13 +40,8 @@ function initializeContactForm() {
                 timestamp: Date.now()
             })
             .then(() => {
-                // Show success toast
                 showToast('Message sent successfully!');
-                
-                // Reset form
                 contactForm.reset();
-                
-                // Clear error messages
                 clearErrorMessages();
             })
             .catch((error) => {
@@ -54,7 +51,6 @@ function initializeContactForm() {
         }
     });
 }
-*/
 
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {

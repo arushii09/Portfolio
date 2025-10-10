@@ -64,6 +64,9 @@ function initializeMobileMenu() {
     }
 }
 
+//firebase
+
+
 // Initialize smooth scrolling for navigation links
 function initializeSmoothScrolling() {
     const navLinks = document.querySelectorAll('a[href^="#"]');
@@ -212,7 +215,50 @@ function initializeContactForm() {
             clearErrorMessages();
         }
     });
-    
+/*
+    //firebase
+    const firebaseConfig = {
+    apiKey: "AIzaSyBOYiWMSTCRNe_5BaJwpMNAeC0vfk1pkP4",
+    authDomain: "portfolio-54219.firebaseapp.com",
+    databaseURL: "https://portfolio-54219-default-rtdb.firebaseio.com",
+    projectId: "portfolio-54219",
+    storageBucket: "portfolio-54219.firebasestorage.app",
+    messagingSenderId: "980227302269",
+    appId: "1:980227302269:web:ac9875289ac31384ea2214",
+    measurementId: "G-CTZGZRE7MB"
+  };
+//initialize
+  firebase.initializeApp(firebaseConfig);
+
+  //reference database
+  var portfolioDB = firebase.database().ref('portfolio')
+
+  document.getElementById('contact-form').addEventListener("submit", submitform)
+  function submitform(e){
+    e.preventDefault();
+
+    var name = getElementByVal('name');
+    var email = getElementByVal('email');
+    var message = getElementByVal('message');
+
+    saveMessages(name, email, message);
+  }
+
+  const saveMessages = (name, email, message) => {
+    var newContact = portfolioDB.push();
+
+    newContact.set({
+        name : name,
+        email : email,
+        message : message,
+    })
+  }
+
+  const getElementByVal = (id) => {
+    return document.getElementById(id).value;
+  }
+    */
+
     // Real-time validation for inputs
     const formInputs = contactForm.querySelectorAll('input, textarea');
     formInputs.forEach(input => {

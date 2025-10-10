@@ -65,7 +65,20 @@ function initializeMobileMenu() {
 }
 
 //firebase
+const firebaseConfig = {
+    apiKey: "AIzaSyCR58PBXIlBPGRg1sFbDZSbUU2syIJCxBQ",
+    authDomain: "portfolio-contact-b303b.firebaseapp.com",
+    databaseURL: "https://portfolio-contact-b303b-default-rtdb.firebaseio.com",
+    projectId: "portfolio-contact-b303b",
+    storageBucket: "portfolio-contact-b303b.firebasestorage.app",
+    messagingSenderId: "941186950399",
+    appId: "1:941186950399:web:ff34849fa77c2af97c98ca",
+    measurementId: "G-0C9GRLXJSR"
+  };
 
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
 
 // Initialize smooth scrolling for navigation links
 function initializeSmoothScrolling() {
@@ -192,6 +205,10 @@ function initializeTestimonialSlider() {
     }
 }
 
+// Initialize Firebase (place this at the top of script.js)
+const app = firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+
 // Initialize contact form with validation
 function initializeContactForm() {
     const contactForm = document.getElementById('contact-form');
@@ -202,19 +219,37 @@ function initializeContactForm() {
         e.preventDefault();
         
         if (validateForm()) {
-            // In a real application, you would send the form data to a server here
-            // For this example, we'll simulate a successful submission
-            
-            // Show success toast
-            showToast('Message sent successfully!');
-            
-            // Reset form
-            contactForm.reset();
-            
-            // Clear error messages
-            clearErrorMessages();
+            // Collect form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Save data to Firebase Realtime Database
+            const newMessageRef = database.ref('messages').push();
+            newMessageRef.set({
+                name: name,
+                email: email,
+                message: message,
+                timestamp: Date.now()
+            })
+            .then(() => {
+                // Show success toast
+                showToast('Message sent successfully!');
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Clear error messages
+                clearErrorMessages();
+            })
+            .catch((error) => {
+                console.error('Error sending message:', error);
+                showToast('Failed to send message. Try again.');
+            });
         }
     });
+}
+
     // Real-time validation for inputs
     const formInputs = contactForm.querySelectorAll('input, textarea');
     formInputs.forEach(input => {

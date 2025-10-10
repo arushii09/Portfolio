@@ -1,4 +1,60 @@
+ const firebaseConfig = {
+    apiKey: "AIzaSyCR58PBXIlBPGRg1sFbDZSbUU2syIJCxBQ",
+    authDomain: "portfolio-contact-b303b.firebaseapp.com",
+    databaseURL: "https://portfolio-contact-b303b-default-rtdb.firebaseio.com",
+    projectId: "portfolio-contact-b303b",
+    storageBucket: "portfolio-contact-b303b.firebasestorage.app",
+    messagingSenderId: "941186950399",
+    appId: "1:941186950399:web:ff34849fa77c2af97c98ca",
+    measurementId: "G-0C9GRLXJSR"
+  };
 
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+
+/*
+// Initialize contact form with validation
+function initializeContactForm() {
+    const contactForm = document.getElementById('contact-form');
+    
+    if (!contactForm) return;
+    
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        if (validateForm()) {
+            // Collect form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Save data to Firebase Realtime Database
+            const newMessageRef = database.ref('messages').push();
+            newMessageRef.set({
+                name: name,
+                email: email,
+                message: message,
+                timestamp: Date.now()
+            })
+            .then(() => {
+                // Show success toast
+                showToast('Message sent successfully!');
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Clear error messages
+                clearErrorMessages();
+            })
+            .catch((error) => {
+                console.error('Error sending message:', error);
+                showToast('Failed to send message. Try again.');
+            });
+        }
+    });
+}
+*/
 
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
@@ -65,20 +121,7 @@ function initializeMobileMenu() {
 }
 
 //firebase
-const firebaseConfig = {
-    apiKey: "AIzaSyCR58PBXIlBPGRg1sFbDZSbUU2syIJCxBQ",
-    authDomain: "portfolio-contact-b303b.firebaseapp.com",
-    databaseURL: "https://portfolio-contact-b303b-default-rtdb.firebaseio.com",
-    projectId: "portfolio-contact-b303b",
-    storageBucket: "portfolio-contact-b303b.firebasestorage.app",
-    messagingSenderId: "941186950399",
-    appId: "1:941186950399:web:ff34849fa77c2af97c98ca",
-    measurementId: "G-0C9GRLXJSR"
-  };
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
 
 // Initialize smooth scrolling for navigation links
 function initializeSmoothScrolling() {
@@ -205,10 +248,6 @@ function initializeTestimonialSlider() {
     }
 }
 
-// Initialize Firebase (place this at the top of script.js)
-const app = firebase.initializeApp(firebaseConfig);
-const database = firebase.database();
-
 // Initialize contact form with validation
 function initializeContactForm() {
     const contactForm = document.getElementById('contact-form');
@@ -219,36 +258,62 @@ function initializeContactForm() {
         e.preventDefault();
         
         if (validateForm()) {
-            // Collect form data
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            // Save data to Firebase Realtime Database
-            const newMessageRef = database.ref('messages').push();
-            newMessageRef.set({
-                name: name,
-                email: email,
-                message: message,
-                timestamp: Date.now()
-            })
-            .then(() => {
-                // Show success toast
-                showToast('Message sent successfully!');
-                
-                // Reset form
-                contactForm.reset();
-                
-                // Clear error messages
-                clearErrorMessages();
-            })
-            .catch((error) => {
-                console.error('Error sending message:', error);
-                showToast('Failed to send message. Try again.');
-            });
+            // In a real application, you would send the form data to a server here
+            // For this example, we'll simulate a successful submission
+            
+            // Show success toast
+            showToast('Message sent successfully!');
+            
+            // Reset form
+            contactForm.reset();
+            
+            // Clear error messages
+            clearErrorMessages();
         }
     });
-}
+/*
+    //firebase
+    const firebaseConfig = {
+    apiKey: "AIzaSyBOYiWMSTCRNe_5BaJwpMNAeC0vfk1pkP4",
+    authDomain: "portfolio-54219.firebaseapp.com",
+    databaseURL: "https://portfolio-54219-default-rtdb.firebaseio.com",
+    projectId: "portfolio-54219",
+    storageBucket: "portfolio-54219.firebasestorage.app",
+    messagingSenderId: "980227302269",
+    appId: "1:980227302269:web:ac9875289ac31384ea2214",
+    measurementId: "G-CTZGZRE7MB"
+  };
+//initialize
+  firebase.initializeApp(firebaseConfig);
+
+  //reference database
+  var portfolioDB = firebase.database().ref('portfolio')
+
+  document.getElementById('contact-form').addEventListener("submit", submitform)
+  function submitform(e){
+    e.preventDefault();
+
+    var name = getElementByVal('name');
+    var email = getElementByVal('email');
+    var message = getElementByVal('message');
+
+    saveMessages(name, email, message);
+  }
+
+  const saveMessages = (name, email, message) => {
+    var newContact = portfolioDB.push();
+
+    newContact.set({
+        name : name,
+        email : email,
+        message : message,
+    })
+  }
+
+  const getElementByVal = (id) => {
+    return document.getElementById(id).value;
+  }
+    */
 
     // Real-time validation for inputs
     const formInputs = contactForm.querySelectorAll('input, textarea');

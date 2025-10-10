@@ -321,58 +321,6 @@
         </div>
     </div>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
-
-    <script>
-        
-     const firebaseConfig = {
-    apiKey: "AIzaSyBOYiWMSTCRNe_5BaJwpMNAeC0vfk1pkP4",
-    authDomain: "portfolio-54219.firebaseapp.com",
-    databaseURL: "https://portfolio-54219-default-rtdb.firebaseio.com",
-    projectId: "portfolio-54219",
-    storageBucket: "portfolio-54219.firebasestorage.app",
-    messagingSenderId: "980227302269",
-    appId: "1:980227302269:web:ac9875289ac31384ea2214",
-    measurementId: "G-CTZGZRE7MB"
-  };
-
-  // 2️⃣ Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  var portfolioDB = firebase.database().ref('portfolio');
-
-  // 3️⃣ Wait until DOM is fully loaded
-  document.addEventListener("DOMContentLoaded", () => {
-
-    // 4️⃣ Attach submit listener
-    document.getElementById('contact-form').addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      // 5️⃣ Get form values
-      var name = document.getElementById('name').value.trim();
-      var email = document.getElementById('email').value.trim();
-      var message = document.getElementById('message').value.trim();
-
-      // 6️⃣ Debug logs (optional, can remove later)
-      console.log("Name:", name);
-      console.log("Email:", email);
-      console.log("Message:", message);
-
-      // 7️⃣ Push to Firebase
-      var newContact = portfolioDB.push();
-      newContact.set({ name, email, message })
-        .then(() => {
-          alert("Message saved!");
-          // Optional: reset the form after submission
-          document.getElementById('contact-form').reset();
-        })
-        .catch(err => console.error("Error saving:", err));
-    });
-
-  });
-    </script>
+  
 </body>
-
-
 </html>
